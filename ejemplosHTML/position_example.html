@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions Examples</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: cadetblue;
+            position: relative;
+        }
+        
+        .bloque{
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            position: absolute;
+        }
+
+        .bloque1{
+            background-color: blue;
+            top: 0%;
+            left: 0%;
+        }
+
+        .bloque2{
+            background-color: pink;
+            top: 0%;
+            right: 0%;
+        }
+
+        .bloque3{
+            background-color: green;
+            bottom: 0%;
+            left: 0%;
+        }
+
+        .bloque4{
+            background-color: yellow;
+            bottom: 0%;
+            right: 0%;
+        }
+
+        .bloque5{
+            background-color: aqua;
+            top: 50%;
+            left: 50%;
+            /* bottom: 50%;
+            right: 50%; */
+            transform: translate(-50%, -50%); 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bloque bloque1"></div>
+        <div class="bloque bloque2"></div>
+        <div class="bloque bloque3"></div>
+        <div class="bloque bloque4"></div>
+        <div class="bloque bloque5"></div>
+    </div>
+
+</body>
+</html>

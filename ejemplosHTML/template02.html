@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetacion 01</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: darkkhaki;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 100vh;
+        }
+
+        header{
+            background-color: black;
+            display: flex;
+            min-height: 10vh;
+            padding: 10px;
+        }
+
+        main{
+            background-color: slateblue;
+            min-height: 90vh;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        small{
+            font-size: 14px;
+        }
+
+        .pull{
+            float: left;
+        }
+
+        .push{
+            float: right;
+        }
+
+        .contenedor{
+            width: 100%;
+            max-width: 1500px;
+            margin: 100px auto;
+        }
+
+        img{
+            width: 100%;
+            display: block;
+        }
+
+        /* Estilizando Tarjetas */
+        .card{
+            border: 1px solid #dedede;
+            background-color:bisque;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .card__wrap--outer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card__wrap--inner{
+            padding: 12px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .card__titulo, .card__item{
+            padding: 12px 18px 12px 18px;
+        }
+
+        .card__sub{
+            padding: 0 18px;
+        }
+
+        .card__footer{
+            background-color: burlywood;
+            padding: 18px;
+            overflow: hidden;
+            border-top: 1px solid #dedede;
+        }
+
+        .flexible{
+            flex-grow: 1;
+        }
+
+        @media (min-width: 480px) { 
+            .card__wrap--inner{
+                width: 50%;
+            }						
+		}
+					
+		@media (min-width: 1024px) { 
+            .card__wrap--inner{
+                width: 25%;
+            }						
+		}
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="contenedor">
+            <div class="card__wrap--outer">
+                <div class="card__wrap--inner">
+                    <div class="card">
+                        <picture>
+                            <source srcset="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg" type="image/jpeg">
+                            <source srcset="../laboratorioIMG/generic.jpeg" type="image/jpeg">
+                            <img src="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg">
+                        </picture>
+                        <div class="card__titulo">
+                            <h2>Primer Titulo</h2>
+                        </div>
+                        <div class="card__sub">
+                            <small>Primer Subtitulo</small>
+                        </div>
+                        <div class="card__item flexible">
+                            <small>Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Cumque accusantium autem iure unde cum repellendus 
+                                repellat dolor qui non est.
+                            </small>
+                        </div>
+                        <div class="card__item">
+                            <small>Tiempo de Lectura: 4min</small>
+                        </div>
+                        <div class="card__footer">
+                            <a href="#" class="pull"><small>Leer Más</small></a>
+                            <a href="#" class="push"><small>Compartir</small></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__wrap--inner">
+                    <div class="card">
+                        <picture>
+                            <source srcset="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg" type="image/jpeg">
+                            <source srcset="../laboratorioIMG/generic.jpeg" type="image/jpeg">
+                            <img src="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg">
+                        </picture>
+                        <div class="card__titulo">
+                            <h2>Segundo Titulo</h2>
+                        </div>
+                        <div class="card__sub">
+                            <small>Segundo Subtitulo</small>
+                        </div>
+                        <div class="card__item flexible">
+                            <small>Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Cumque accusantium autem iure unde cum repellendus 
+                                repellat dolor qui non est.
+                            </small>
+                            <small>Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Cumque accusantium autem iure unde cum repellendus 
+                                repellat dolor qui non est.
+                            </small>
+                        </div>
+                        <div class="card__item">
+                            <small>Tiempo de Lectura: 4min</small>
+                        </div>
+                        <div class="card__footer">
+                            <a href="#" class="pull"><small>Leer Más</small></a>
+                            <a href="#" class="push"><small>Compartir</small></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__wrap--inner">
+                    <div class="card">
+                        <picture>
+                            <source srcset="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg" type="image/jpeg">
+                            <source srcset="../laboratorioIMG/generic.jpeg" type="image/jpeg">
+                            <img src="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg">
+                        </picture>
+                        <div class="card__titulo">
+                            <h2>Tercer Titulo</h2>
+                        </div>
+                        <div class="card__sub">
+                            <small>Tercer Subtitulo</small>
+                        </div>
+                        <div class="card__item flexible">
+                            <small>Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Cumque accusantium autem iure unde cum repellendus 
+                                repellat dolor qui non est.
+                            </small>
+                        </div>
+                        <div class="card__item">
+                            <small>Tiempo de Lectura: 4min</small>
+                        </div>
+                        <div class="card__footer">
+                            <a href="#" class="pull"><small>Leer Más</small></a>
+                            <a href="#" class="push"><small>Compartir</small></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__wrap--inner">
+                    <div class="card">
+                        <picture>
+                            <source srcset="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg" type="image/jpeg">
+                            <source srcset="../laboratorioIMG/generic.jpeg" type="image/jpeg">
+                            <img src="https://laverdadnoticias.com/__export/1626574579733/sites/laverdad/img/2021/07/17/dinosaurio_de_google_juego_final.jpg_793492074.jpg">
+                        </picture>
+                        <div class="card__titulo">
+                            <h2>Cuarto Titulo</h2>
+                        </div>
+                        <div class="card__sub">
+                            <small>Cuarto Subtitulo</small>
+                        </div>
+                        <div class="card__item flexible">
+                            <small>Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Cumque accusantium autem iure unde cum repellendus 
+                                repellat dolor qui non est.
+                            </small>
+                        </div>
+                        <div class="card__item">
+                            <small>Tiempo de Lectura: 4min</small>
+                        </div>
+                        <div class="card__footer">
+                            <a href="#" class="pull"><small>Leer Más</small></a>
+                            <a href="#" class="push"><small>Compartir</small></a>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </main>
+</body>
+</html>

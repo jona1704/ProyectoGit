@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetacion 01</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: darkkhaki;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 100vh;
+        }
+
+        header{
+            background-color: black;
+            display: flex;
+            min-height: 10vh;
+            padding: 10px;
+        }
+
+        main{
+            display: flex;
+        }
+
+        header .header-title{
+            width: 80%;
+        }
+
+        header .ads{
+            width: 20%;
+        }
+
+        header .header-title p{
+            color:yellow;
+            font-size: 20px;
+        }
+
+        main{
+            display: flex;
+            flex-grow: 1;
+            min-height: 90vh;
+            background-color: blueviolet;
+        }
+
+        main nav{
+            background-color: coral;
+            width: 20%;
+        }
+
+        main .contenedor-principal{
+            background-color: chocolate;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .contenedor-principal footer{
+            background-color: black;
+            height: 10%;
+        }
+
+        .contenedor-principal article{
+            background-color: aquamarine;
+            height: 90%;
+        }
+
+        @media screen and (max-width: 768px) {
+            main{
+                display: block;
+                width: 100%;
+            }
+
+            main nav{
+                min-height: 10vh;
+                width: 100%;
+            }
+            
+            main .contenedor-principal{
+                display: block;
+                width: 100%;
+                min-height: 90vh;
+            }
+
+            .contenedor-principal article{
+                min-height: 90vh;
+            }
+
+            .contenedor-principal footer{
+                min-height: 10vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur at possimus quidem, nisi hic ex exercitationem deserunt ipsum maxime nulla incidunt eius? Quis tempore exercitationem et qui asperiores? Optio cupiditate fuga eaque, quisquam culpa velit minus? Exercitationem similique ea autem, itaque optio nam obcaecati incidunt assumenda perspiciatis commodi magnam ad?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur at possimus quidem, nisi hic ex exercitationem deserunt ipsum maxime nulla incidunt eius? Quis tempore exercitationem et qui asperiores? Optio cupiditate fuga eaque, quisquam culpa velit minus? Exercitationem similique ea autem, itaque optio nam obcaecati incidunt assumenda perspiciatis commodi magnam ad?</p>
+        </div>
+        <div class="ads"></div>
+    </header>
+    <main>
+        <nav></nav>
+        <div class="contenedor-principal">
+            <article></article>
+            <footer></footer>
+        </div>
+    </main>
+</body>
+</html>

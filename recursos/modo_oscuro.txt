@@ -1,0 +1,64 @@
+body.dark{
+    background-color: #000;
+}
+
+.dark .modo_oscuro{
+    background-color: gold;
+}
+
+.dark nav{
+    border: 1px solid gold;
+    border-bottom: 0px;
+    background-color: #000;
+}
+
+.dark nav ul li{
+    background-color: #000;
+}
+
+.dark nav ul li:hover{
+    background-color: gold;
+}
+
+.dark .container main{
+    border: 1px solid gold;
+    background-color: #000;
+}
+
+.dark .container aside{
+    background-color: #000;
+    border: 1px solid gold;
+    border-left: 0px;
+    color:#fff
+}
+
+.dark header{
+    border: 1px solid gold;
+}
+
+.dark .container .articulo1 section{
+    border: 1px solid gold;
+    color: #fff
+}
+
+.dark .sugerencias_form{
+    border: 1px solid #000;
+}
+
+.dark .sugerencias_form h2{
+    color: #000;
+}
+
+.dark .sugerencias_form label{
+    color: #000;
+    font-weight: bold;
+}
+
+.dark footer{
+    background-color: gold;
+}
+
+.dark footer p{
+    color: #000;
+    font-weight: bold;
+}
