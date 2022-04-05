@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style> 
+        .contenedor01 {
+          width: 100px;
+          height: 100px;
+          background: red;
+          transition: width 2s;
+        }
+        
+        .contenedor01:hover {
+          width: 300px;
+        }
+
+        .contenedor02 {
+            width: 100px;
+            height: 100px;
+            background-color: dodgerblue;
+            transition: width 2s, height 4s;
+        }
+
+        .contenedor02:hover {
+            width: 300px;
+            height: 300px;
+        }
+
+        .contenedor03 {
+            width: 100px;
+            height: 100px;
+            background-color: limegreen;
+            transition: width 2s;
+        }
+
+        #div1 {transition-timing-function: linear;}
+        #div2 {transition-timing-function: ease;}
+        #div3 {transition-timing-function: ease-in;}
+        #div4 {transition-timing-function: ease-out;}
+        #div5 {transition-timing-function: ease-in-out;}
+
+        .contenedor03:hover {
+            width: 300px;
+        }
+
+        /* Bezier */
+        #contenedor-bezier{
+            overflow: hidden; 
+        }
+
+        #contenedor-bezier:hover .coche{    
+            margin-left: 100%;
+            transition: all 2s;
+            transition-timing-function: cubic-bezier(1,.46,.48,1.68);
+            
+        }
+
+        .coche{
+            background: url("../laboratorioIMG/car.png");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: 200px 100px;
+            width: 100%;
+            height: 300px;      
+        }   
+        
+        .contenedor04 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 3s;
+            transition-delay: 1s;
+        }
+
+        .contenedor04:hover {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>La Propiedad Transición</h1>
+    <p>Mantente sobre los elementos div de abajo, para ver los efecto de la transiciones:</p>
+    <div class="contenedor01"></div>
+    <br><br>
+    <div class="contenedor02"></div>
+    <br><br>
+    <h2>Especificar curva de velocidad en las transiciones:</h2>
+    <p>La propiedad <i>transition-timing-function</i> especifica la curva de velocidad del efecto de transición.</p>
+    <p>La propiedad <i>transition-timing-function</i> puede tener los siguientes valores:</p>
+    <ul>
+        <li><b>ease</b>: especifica un efecto de transición con un comienzo lento, luego rápido, luego finaliza lentamente (esto es predeterminado).  Es equivalente a cubic-bezier (0.25,0.1,0.25,1).</li>
+        <li><b>lineal</b>: especifica un efecto de transición con la misma velocidad de principio a fin. Equivalente a cubic-bezier (0,0,1,1).</li>
+        <li><b>ease-in</b>: especifica un efecto de transición con un comienzo lento. Equivalente a cubic-bezier (0.42,0,1,1).</li>
+        <li><b>ease-out</b>: especifica un efecto de transición con un final lento. Equivale a cubic-bezier (0,0,0.58,1).</li>
+        <li><b>ease-in-out</b>: especifica un efecto de transición con un comienzo y un final lentos. Equivalente a cubic-bezier (0.42,0,0.58,1).</li>
+        <li><b>cubic-bezier(n,n,n,n)</b>: cubic-bezier(n,n,n,n): donde n es un valor entre 0 y 1. Jugando con estos valores, vamos a poder obtener la velocidad deseada en cada momento de la animación.</li>
+    </ul>
+    <div class="contenedor03" id="div1">linear</div><br>
+    <div class="contenedor03" id="div2">ease</div><br>
+    <div class="contenedor03" id="div3">ease-in</div><br>
+    <div class="contenedor03" id="div4">ease-out</div><br>
+    <div class="contenedor03" id="div5">ease-in-out</div><br>
+    <div id="contenedor-bezier">
+        <div class="coche"></div>
+    </div>
+    <h2>Especificar curva de velocidad en las transiciones:</h2>
+    <p>La propiedad <i>transition-delay</i> especifica un retraso (en segundos) para el efecto de transición.</p>
+    <div class="contenedor04"></div>
+</body>
+</html>

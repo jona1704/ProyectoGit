@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5a4f05122.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="laboratorioCSS/style.css">
     <title>Proyecto</title>
 </head>
 <body>
     <header>
-        <div class="header_logo">
-            <img src="laboratorioIMG/logo-blanco.png" alt="Logo UNAM">
+        <div class="encabezado">
+            <div class="header_logo">
+                <img src="laboratorioIMG/logo-blanco.png" alt="Logo UNAM">
+            </div>
+            <div class="header_nombre">
+                <h1>FES Acatlan</h1>
+            </div>
         </div>
-        <div class="header_nombre">
-            <h1>FES Acatlan</h1>
+        <div class="modo_oscuro">
+            <div class="nombre_sesion"></div>
+            <button class="switch" id="switch">
+                <span><i class="fa-solid fa-sun"></i></span>
+                <span><i class="fa-solid fa-moon"></i></span>
+            </button> 
         </div>
     </header>
     <nav>
@@ -63,5 +73,6 @@
     <footer>
         <p>FES Acatlan 2022 - Derechos reservados</p>
     </footer>
+    <script src="laboratorioJS/script.js"></script>
 </body>
 </html>

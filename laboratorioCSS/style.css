@@ -14,26 +14,89 @@ body{
     margin: 0 auto;
 }
 
+/* Modo Oscuro */
+body.dark{
+    background-color: #000;
+}
+
+.dark .modo_oscuro{
+    background-color: gold;
+}
+
+.dark nav{
+    border: 1px solid gold;
+    border-bottom: 0px;
+    background-color: #000;
+}
+
+.dark nav ul li:hover{
+    background-color: gold;
+}
+
+.dark .seccion_principal main{
+    border: 1px solid gold;
+    background-color: #000;
+}
+
+.dark .seccion_principal aside{
+    background-color: #000;
+    border: 1px solid gold;
+    border-left: 0px;
+    color:#fff
+}
+
+.dark .encabezado {
+    border: 1px solid gold;
+}
+
+.dark .seccion_principal article .section1, .dark .seccion_principal article .section2{
+    border: 1px solid gold;
+    color: #fff
+}
+
+.dark .sugerencias_form{
+    border: 1px solid #000;
+}
+
+.dark .sugerencias_form h2{
+    color: #000;
+}
+
+.dark .sugerencias_form label{
+    color: #000;
+    font-weight: bold;
+}
+
+.dark footer{
+    background-color: gold;
+}
+
+.dark footer p{
+    color: #000;
+    font-weight: bold;
+}
+
 /* Header */
 
-header{
-    width: 100%;
-    background-color: black;
-    display: flex;
+header .encabezado{
+    background-color: #000;
     padding: 10px;
+    display: flex;
 }
 
-header .header_logo{
-    width: 15%;
+header .encabezado .header_logo{
+    width: 10%;
+    height: 100%;
 }
 
-header .header_logo img{
+header .encabezado .header_logo img{
     width: 100px;
-    height: 100px;
+    height: 100%;
 }
 
-header .header_nombre{
-    width: 75%;
+header .encabezado .header_nombre{
+    color: white;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +104,14 @@ header .header_nombre{
 
 header .header_nombre h1{
     color: white;
+}
+
+header .modo_oscuro{
+    padding: 5px;
+    background-color: #BFC9CA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Navegacion */
@@ -205,6 +276,51 @@ footer p{
     font-size: 20px;
 }
 
+/* Boton Modo Oscuro */
+.switch{
+    background-color: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    display: flex;
+    outline: none;
+}
+
+.switch::after{
+    content: "";
+    display: block; /* Para crear la caja */
+    width: 30px;
+    height: 30px;
+    position: absolute; /* El boton lo desprende de su posicion original y lo coloca a la izquierda */
+    background-color: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset; /* No seteada */
+    /* Para posicionar izquierda o derecha cambiamos left y right a unset */
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.switch.active{
+    background-color: orange;
+    color: #000;
+}
+
+.switch.active::after{
+    right: 0;
+    left: unset;
+}
+
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background-color: none;
+    color: #fff;
+}
+
 /* Seccion Responsiva */
 @media screen and (max-width: 768px) {
     .seccion1 figure img{
@@ -216,7 +332,31 @@ footer p{
         flex-direction: column;
     }
 
+    .seccion_principal{
+        flex-direction: column;
+    }
+
+    .seccion_principal main, .seccion_principal aside{
+        width: 100%;
+    }
+
     .sugerencias-form{
         width: 95%;
+    }
+
+    .seccion_principal aside{
+        flex-direction: row;
+        order: 1;
+        padding: 15px;
+    }
+
+    .seccion_principal main{
+        order: 2;
+    }
+                                                       
+    /* Modo Oscuro */
+    .dark .seccion_principal aside{
+        border-left: 1px solid gold;
+        border-bottom: 0px;
     }
 }
