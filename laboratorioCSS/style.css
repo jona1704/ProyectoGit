@@ -26,7 +26,10 @@ body.dark{
 .dark nav{
     border: 1px solid gold;
     border-bottom: 0px;
-    background-color: #000;
+}
+
+.dark nav ul li{
+    background-color: yellow;
 }
 
 .dark nav ul li:hover{
@@ -49,20 +52,22 @@ body.dark{
     border: 1px solid gold;
 }
 
-.dark .seccion_principal article .section1, .dark .seccion_principal article .section2{
+.dark .seccion_principal article section{
     border: 1px solid gold;
-    color: #fff
+    background-color: #000;
+    color: #fff;
+    font-size: 17px;
 }
 
-.dark .sugerencias_form{
+.dark .sugerencias-form{
     border: 1px solid #000;
 }
 
-.dark .sugerencias_form h2{
+.dark .sugerencias-form h2{
     color: #000;
 }
 
-.dark .sugerencias_form label{
+.dark .sugerencias-form label{
     color: #000;
     font-weight: bold;
 }
@@ -200,44 +205,88 @@ article{
     border-radius: 10px;
 }
 
+.sugerencias-form > * {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.sugerencias-form *::placeholder{
+    color: #000;
+}
+
+.sugerencias-form [required]:valid{
+    border: 2px solid green;
+}
+
+.sugerencias-form [required]:invalid{
+    border: 2px solid darkred;
+}
+
+
 .sugerencias-form h2{
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .sugerencias-form label{
-    display: block;
-    margin-bottom: 1px;
-    font-weight: 700; /* 700 = bold */
-    font-size: 20px;
-}
-
-.sugerencias-form input{
-    width: 100%;
-    margin-bottom: 10px;
-    height: 30px;
+    margin-bottom: -1.2rem;
 }
 
 .sugerencias-form textarea{
-    resize: none;
+    /* margin-bottom: 15px; */
     width: 100%;
-    margin-bottom: 10px;
+    resize: none;
 }
 
 .sugerencias-form input[type=submit]{
     width: 100%;
     background-color: #1F2194;
     color: #D5DBDB;
+    font-size: 20px;
+    font-weight: 700;
     border: 1px solid #1F2194;
     padding: 3px;
     border-radius: 3px;
-    font-size: 20px;
+    cursor: pointer;
 }
 
 .sugerencias-form input[type=submit]:hover{
     background-color: #D35400;
-    color: black;
+    color: #000;
     border: 1px solid #D35400;
+}
+
+.sugerencias-form_error{
+    margin-top: -1rem; /* 1rem = 16px */
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+    font-size: 90%;
+    background-color: darkred;
+    color: #fff;
+    transition: all 800ms ease;
+}
+
+.sugerencias-form_error.is-active{
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none{
+    display: none;
+}
+
+@keyframes show-message{
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 /* Seccion Principal - Aside */
@@ -320,6 +369,79 @@ footer p{
     background-color: none;
     color: #fff;
 }
+
+/* Preloader */
+
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.8;
+    z-index: 10000; 
+}
+
+.outer{
+    height: 300px;
+    width: 300px;
+    background: linear-gradient(135deg,#FEED07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+    border-radius: 50%;
+}
+
+.inner{
+    position: absolute;
+    width: 275px;
+    height: 275px;
+    text-align: center;
+    line-height: 275px;
+    background: #000;
+    border-radius: 50%;
+    cursor: default;
+    /* opacity: 0; */
+}
+
+.inner span{
+    font-size: 60px;
+    font-weight: 800;
+    background: linear-gradient(135deg,#FEED07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+    color: transparent;
+    /* Las dos siguiente lineas son necesarias */
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 300%;
+}
+
+.cerrar{
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+
+.outer.active-loader{
+    animation: rotate 2s ease infinite;
+} 
+
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.outer.active-loader-2{
+    animation: rotate2 3s ease;
+}
+
+@keyframes rotate2 {
+    to{
+        transform: rotate(360deg);
+    }
+} 
 
 /* Seccion Responsiva */
 @media screen and (max-width: 768px) {

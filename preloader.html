@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader</title>
+    <style>
+        body{
+            margin: 0;
+            color: #000;
+            font-family: sans-serif; 
+        }
+        /* html,body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+            /* background: #000; 
+            overflow: hidden;
+        } */
+
+        .container{
+            position: absolute;
+            top: 0;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+
+
+        .outer{
+            height: 300px;
+            width: 300px;
+            background: linear-gradient(135deg,#FEED07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+            border-radius: 50%;
+        }
+
+        .inner{
+            position: absolute;
+            width: 275px;
+            height: 275px;
+            text-align: center;
+            line-height: 275px;
+            background: #000;
+            border-radius: 50%;
+            cursor: default;
+            /* opacity: 0; */
+        }
+
+        .inner span{
+            font-size: 60px;
+            font-weight: 800;
+            background: linear-gradient(135deg,#FEED07 0%,#FE6A50 5%,#ED00AA 15%,#2FE3FE 50%,#8900FF 100%);
+            color: transparent;
+            /* Las dos siguiente lineas son necesarias */
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 300%;
+        } 
+
+        .cerrar{
+            transform: translateY(-100%);
+            transition: all 0.5s;
+        }
+
+        .outer.active-loader{
+            animation: rotate 2s ease infinite;
+        }    
+        
+        @keyframes rotate {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        .outer.active-loader-2{
+            animation: rotate2 3s ease;
+        }
+
+        @keyframes rotate2 {
+            to{
+                transform: rotate(360deg);
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="outer"></div>
+        <div class="inner">
+            <span>0%</span>
+        </div>
+    </div>
+    HOLA MUNDO
+    <script>
+        let outer = document.querySelector(".outer");
+        //let inner = document.querySelector(".inner");
+        let percent = document.querySelector("span");
+        let contenedor = document.querySelector(".container");
+        let count = 0;
+        window.addEventListener('load', function(){
+            let loading = setInterval(function(){
+                if(count == 100){
+                    outer.classList.remove("active-loader");
+                    outer.classList.add("active-loader-2");
+                    clearInterval();
+                } else{
+                    count = count + 1;
+                    percent.textContent = count + '%';
+                    outer.classList.add("active-loader");
+                }
+            },45);
+
+            setTimeout(function(){
+                contenedor.classList.add('cerrar');
+            }, 6000);
+        });
+    </script>
+</body>
+</html>

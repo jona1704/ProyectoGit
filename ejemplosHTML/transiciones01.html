@@ -78,6 +78,116 @@
         .contenedor04:hover {
             width: 300px;
         }
+
+        .contenedor05 {
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: burlywood;
+            transform: rotate(30deg);
+        }
+
+        .contenedor05_1 {
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: burlywood;
+            transform: rotate(-30deg);
+        }
+
+        .contenedor06 {
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: lightgreen;
+            transform: translate(50px, 40px);
+        }
+
+        .contenedor07 {
+            width: 100px;
+            height: 100px;
+            font-size: 8px;
+            text-align: center;
+            line-height: 100px;
+            background: sandybrown;
+            transform: translate(50px, 120px) scale(2, 3);
+        }
+
+        .contenedor08 {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: lightslategray;
+            transform: scale(0.5, 0.5);
+        }
+
+        .contenedor09 {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: translateX(60px) scaleX(2);
+        }
+
+        .contenedor10 {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: translate(60px, 100px) scaleY(3);
+        }
+
+        .contenedor11 {
+            width: 100px;
+            height: 100px;
+            margin-left: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: skewX(30deg);
+        }
+
+        .contenedor12 {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            margin-left: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: skewY(30deg);
+        }
+
+        .contenedor13 {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            margin-left: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: skew(30deg, 30deg);
+        }
+
+        .contenedor14 {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            margin-left: 30px;
+            text-align: center;
+            line-height: 100px;
+            background: khaki;
+            transform: matrix(1, -0.3, 0, 1, 0,0);
+        }
     </style>
 </head>
 <body>
@@ -109,5 +219,48 @@
     <h2>Especificar curva de velocidad en las transiciones:</h2>
     <p>La propiedad <i>transition-delay</i> especifica un retraso (en segundos) para el efecto de transición.</p>
     <div class="contenedor04"></div>
+    <br><br>
+    <h2>Transformaciones 2D</h2>
+    <p>Las transformaciones 2D CSS nos permiten rotar, torcer, escalar o desplazar los elementos de nuestra página web</p>
+    <h3>Método rotate()</h3>
+    <p>Rota un elemento en el sentido de las manecillas del reloj o en el sentido contrario a las manecillas del reloj según un grado dado.</p>
+    <div class="contenedor05">Rotar 30deg</div>
+    <p>Podemor ir en sentido contrario a las manecillas del reloj usando números negativos.</p>
+    <div class="contenedor05_1">Rotar -30deg</div>
+    <h3>Método translate()</h3>
+    <p>Mueve un elemento desde su posición actual (según los parámetros dados para el eje X y el eje Y).</p>
+    <p><b>Ejemplo:</b> x=50px, y=40px</p>
+    <div class="contenedor06">(50px,40px)</div>
+    <br>
+    <h3>Método scale()</h3>
+    <p>Incrementa o Decrementa el tamaño de un elemento</p>
+    <p><b>Ejemplo:</b> Incrementamos dos vecess si ancho (width) y tres veces su altura (height)</p>
+    <div class="contenedor07">(100px*2, 100px*2)</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>Si queremos que un contenedor decresca a la mitad de su ancho y alto original, lo podemos hacer, como sigue:</p>
+    <p><b>Ejemplo: </b>scale(0.5, 0.5)</p>
+    <div class="contenedor08"></div>
+    <h3>Método scaleX()</h3>
+    <p>Incrementa o Decrementa sólo el ancho (width) de un elemento</p>
+    <div class="contenedor09"></div>
+    <h3>Método scaleY()</h3>
+    <p>Incrementa o Decrementa sólo el alto (height) de un elemento</p>
+    <div class="contenedor10"></div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h3>Método skewX()</h3>
+    <p>Sesga un elemento a lo largo del eje X en el angulo dado.</p>
+    <div class="contenedor11"></div>   
+    <h3>Método skewY()</h3> 
+    <p>Sesga un elemento a lo largo del eje Y en los angulo dado.</p>
+    <div class="contenedor12"></div>
+    <br><br>
+    <h3>Método skew()</h3> 
+    <p>Sesga un elemento a lo largo de los ejes X y Y en los angulos dados.</p>
+    <div class="contenedor13"></div>
+    <br><br>
+    <h3>Método matrix()</h3> 
+    <p>Combina todos los métodos de transformación 2D en uno.</p>
+    <p>Los parametros son los siguientes: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</p>
+    <div class="contenedor14"></div>
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado</title>
+    <style>
+        #cuadro{
+            width: 100px; 
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        #barrera{
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            background: #000;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cuadros span{
+            position: absolute;
+            color: #fff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        .cuadros span.s1{
+            left: 30%;
+            top: 0px;
+        }
+
+        .cuadros span.s2{
+            left: 0px;
+            top: 41%;
+        }
+
+        .cuadros span.s3{
+            right: 0px;
+            top: 41px;
+        }
+
+        .cuadros span.s4{
+            bottom: 0px;
+            left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuadros" id="cuadro">
+        <span class="s1">Top</span>
+        <span class="s2">Left</span>
+        <span class="s3">Right</span>
+        <span class="s4">Bottom</span>
+    </div>
+    <div class="cuadros" id="barrera">
+        <span class="s1">Top</span>
+        <span class="s2">Left</span>
+        <span class="s3">Right</span>
+        <span class="s4">Bottom</span>
+    </div>
+    <script>
+        let tops = 0;
+        let lefts = 0;
+        let cuadrado = document.getElementById("cuadro");
+        let barrera = document.getElementById("barrera");
+        // Ubicar donde esta la barrera
+        let barreraTop = 0;
+        let barreraLeft = 0;
+        let barreraBottom = 0;
+        let barreraRight = 0;
+
+        window.onload = function(){
+            //document.onkeypress = teclas;
+            // Para manejar las teclas direccionales empleamos onkeydown
+            document.onkeydown = teclas;
+            // declaración de variables
+            let posicion_barrera = barrera.getBoundingClientRect();
+            /* El método getBoundingClientRect() retorna un objeto DOMRect que proporciona información 
+               sobre el tamaño de un elemento y su posición relativa al viewport. */
+            barreraTop = posicion_barrera.top;
+            barreraLeft = posicion_barrera.left;
+            barreraBottom = posicion_barrera.bottom;
+            barreraRight = posicion_barrera.right;
+            console.log(barreraTop);
+        }
+
+        function teclas(event){
+            let codigo = event.keyCode;
+            //console.log(String.fromCharCode(event.charCode));
+            //console.log(codigo);
+            let posicion_cuadrado = cuadrado.getBoundingClientRect();
+            let cuadradoTop = posicion_cuadrado.top;
+            let cuadradoLeft = posicion_cuadrado.left;
+            let cuadradoBottom = posicion_cuadrado.bottom;
+            let cuadradoRight = posicion_cuadrado.right;
+        
+            if(codigo === 40){
+                tops++;
+                cuadrado.style.top = tops+"px";
+            }
+
+            if(codigo === 38){
+                tops--;
+                cuadrado.style.top = tops+"px";
+            }
+
+            if(codigo === 37){
+                lefts--;
+                cuadrado.style.left = lefts+"px";
+            }
+
+            if(codigo === 39){
+                lefts++;
+                cuadrado.style.left = lefts+"px";
+            }
+
+            // Evitar la colision
+            if(cuadradoRight === barreraLeft && cuadradoBottom >= barreraTop && cuadradoTop <= barreraBottom){
+                lefts = lefts - 2;
+            }
+
+            if(cuadradoBottom === barreraTop && cuadradoRight >= barreraLeft && cuadradoLeft <= barreraRight){
+                tops = tops - 2;
+            }
+
+            if(cuadradoLeft === barreraRight && cuadradoBottom >= barreraTop && cuadradoTop <= barreraBottom){
+                lefts = lefts + 2;
+            }
+
+            if(cuadradoTop === barreraBottom && cuadradoRight >= barreraLeft && cuadradoLeft <= barreraRight){
+                tops = tops + 2;
+            }
+        }
+    </script>
+</body>
+</html>

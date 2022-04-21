@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Onchange</title>
+    <style>
+        #contenedor{
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 400px;
+        }
+
+        label{
+            width: 300px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input{
+            width: 80%;
+        }
+
+        img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <form action="#" id="form1" method="post">
+           <label for="fruta">Por favor seleccione una fruta: </label>
+           <select name="fruta" id="fruta">
+                <option value="">Seleccione una Imagen</option>
+                <option value="mango">Mango</option>
+                <option value="manzana">Manzana</option>
+                <option value="fresa">Fresa</option>
+                <option value="platano">Platano</option>
+           </select>
+           <br>
+           <p id="nombre_fruta"></p>
+           <br>
+           <img src="../img/empty.jpeg" alt="Imagen de Fruta">
+        </form>
+     </div>
+     <script>
+        
+     </script>
+</body>
+</html>

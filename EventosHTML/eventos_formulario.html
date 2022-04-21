@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Formulario</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@700&display=swap');
+
+        ::selection{
+            background-color: khaki;
+        }
+        
+        h1{
+            text-align: center;
+            font-family: 'Audiowide', cursive;
+        }
+
+        #formulario{
+            text-align: center;
+        }
+
+        input[type=text]{
+            width: 20%;
+            height: 30px;
+        }
+
+        input[type=search], select{
+            width: 20.5%;
+            height: 35px;
+        }
+
+        input[type=reset], input[type=submit]{
+            height: 30px;
+            width: 10%;
+            background-color: blue;
+            border: 1px solid blue;
+            color: yellow;
+        }
+
+        input[type=reset]:hover, input[type=submit]:hover{
+            background-color: black;
+            border: 1px solid black;
+        }
+
+        input:invalid, select:invalid {
+            border: 2px solid red;
+        }
+
+        input:valid, select:valid  {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario FES Acatlán</h1>
+    <form id="formulario" action="#">
+        Usuario: <br><input type="text" name="usuario" id="usuario" required><br><br>
+        Email: <br><input type="text" name="email" id="email" required><br><br>
+        Móvil: <br><input type="text" name="movil" id="movil" required><br><br>
+        Seleccione Estado: <br><select name="estado" id="estado" required="required">
+            <option value="">-- Seleccione Estado --</option>
+            <option value="Ciudad de México">Ciudad de México</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Monterrey">Monterrey</option>
+            <option value="Veracruz">Veracruz</option>
+        </select><br><br>
+        Búsqueda: <br><input type="search" id="buscar" required><br><br>
+        <input type="submit" value="Guardar">
+        <input type="reset" value="Reset">
+    </form>
+    <script>
+    </script>
+</body>
+</html>

@@ -9,6 +9,12 @@
     <title>Proyecto</title>
 </head>
 <body>
+    <div class="container">
+        <div class="outer"></div>
+        <div class="inner">
+            <span>0%</span>
+        </div>
+    </div>
     <header>
         <div class="encabezado">
             <div class="header_logo">
@@ -19,7 +25,7 @@
             </div>
         </div>
         <div class="modo_oscuro">
-            <div class="nombre_sesion"></div>
+            <div class="nombre_sesion">JONATHAN</div>
             <button class="switch" id="switch">
                 <span><i class="fa-solid fa-sun"></i></span>
                 <span><i class="fa-solid fa-moon"></i></span>
@@ -53,13 +59,20 @@
                     <form action="#" method="#" class="sugerencias-form">
                         <h2>Buzon de Sugerencias</h2>
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="nombre" id="nombre" 
+                        pattern="^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]+$" 
+                        title="Nombre solo acepta letras y espacios en blanco" required>
                         <label for="email">Correo:</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" 
+                        pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" 
+                        title="Email Inválido" required>
                         <label for="asunto">Asunto:</label>
-                        <input type="text" name="asunto" id="asunto">
+                        <input type="text" name="asunto" id="asunto" 
+                        title="El asunto es requerido" required>
                         <label for="comentario">Comentario:</label>
-                        <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                        <textarea name="comentario" id="comentario" cols="30" rows="10" 
+                        data-pattern="^.{1,255}$" 
+                        title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
                         <input type="submit" value="ENVIAR">            
                     </form>
                 </section>

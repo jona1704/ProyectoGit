@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5a4f05122.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../laboratorioCSS/style.css">
+    <link rel="stylesheet" href="../laboratorioCSS/login.css">
+    <title>Login - Proyecto</title>
+</head>
+<body>
+    <header>
+        <div class="encabezado">
+            <div class="header_logo">
+                <img src="../laboratorioIMG/logo-blanco.png" alt="Logo UNAM">
+            </div>
+            <div class="header_nombre">
+                <h1>FES Acatlan</h1>
+            </div>
+        </div>
+        <div class="modo_oscuro">
+            <div class="nombre_sesion"></div>
+            <button class="switch" id="switch">
+                <span><i class="fa-solid fa-sun"></i></span>
+                <span><i class="fa-solid fa-moon"></i></span>
+            </button> 
+        </div>
+    </header>
+    <div class="seccion_login">
+        <main>
+            <form action="#">
+                <div class="title"><span>Iniciar Sesión</span></div>
+                <div class="row">
+                    <input type="text" placeholder="Ingrese Nombre de Usuario" required>
+                </div>
+                <div class="row">
+                    <input type="password" placeholder="Ingrese Contraseña" required>
+                </div>
+                <div class="forgot"><a href="#">¿Olvidó la Contraseña?</a></div>
+                <div class="row button">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">¿No tiene cuenta? <a href="#">Registrar</a></div>
+    
+            </form>
+        </main>        
+    </div>
+    <footer>
+        <p>FES Acatlan 2022 - Derechos reservados</p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

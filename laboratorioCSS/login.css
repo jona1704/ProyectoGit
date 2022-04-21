@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Modo Oscuro */
+body.dark{
+    background-color: #000;
+}
+
+/* Página para Loguear Usuarios */
+
+.seccion_login, .seccion_registrar{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+}
+
+.seccion_login main{
+    width: 100%;
+    background-color:darkgoldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion_login main form{
+    width: 40%;
+    /* background-color: #fff; */
+    background: linear-gradient(90deg, rgba(0,3,36,1) 0%, rgba(9,67,121,1) 26%, rgba(51,119,168,1) 81%);
+    border: 1px solid #000;
+    padding: 30px 25px 25px 25px;
+}
+
+.seccion_login main form .title{
+    height: 90px;
+    background: #16a085;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion_login main form .row{
+    height: 45px;
+}
+
+.seccion_login main form .row input{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.seccion_login main form .row input:focus{
+    border-color: #16a085;
+    box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+
+.seccion_login main form .row input::placeholder{
+    color: #999;
+}
+
+.seccion_login main form .forgot{
+    margin: 5px 0 20px 0;
+}
+
+.seccion_login main form .forgot a{
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.seccion_login main form .forgot a:hover{
+    text-decoration: underline;
+}
+
+.seccion_login main form .button input{
+    color: #fff;
+    background: #16a085;
+    border: 1px solid #16a085;
+    cursor: pointer;
+}
+
+.seccion_login main form .button input:hover{
+    background: #12876f;
+}
+
+.seccion_login main form .signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+    color: yellow;
+}
+
+.seccion_login main form .signup-link a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.seccion_login main form .signup-link a:hover{
+    text-decoration: underline;
+}
+
+.dark .seccion_login main form{
+    background: linear-gradient(90deg, rgba(0,4,36,0.9206276260504201) 88%, rgba(9,67,121,1) 95%, rgba(51,119,168,1) 100%);
+}
+
+.dark .seccion_login main form .title{
+    background-color: gold;
+    color: #000;
+}
+
+.dark .seccion_login main form .button input{
+    background-color: gold;
+    color: #000;
+    border: 1px solid gold;
+}
+
+.dark .seccion_login main form .button input:hover{
+    background-color: darkgoldenrod;
+    border: 1px solid darkgoldenrod;
+}
+
+/* Página para Registrar Usuarios */
+.seccion_login main .contenedor_form{
+    width: 380px;
+    height: auto;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
+}
+
+.seccion_login main .contenedor_form .title{
+    position: absolute;
+    top: -10px;
+    background-color: #01c2c2;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.seccion_login main .contenedor_form .title:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid #01a9a9;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #01a9a9;
+}
+
+.seccion_login main .contenedor_form .subcontenedor_form{
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+}
+
+.subcontenedor_form .form{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.subcontenedor_form .form .label{
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.subcontenedor_form .form .input{
+    margin: 5px 0 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #01c2c2;
+    color: #3e3e40;
+    font-size: 12px;
+    outline: none;
+    border-radius: 3px;
+}
+
+.btn{
+    width: 100%;
+    background-color: #01c2c2;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid #01c2c2;
+}
+
+.btn:hover{
+    background-color: #0F9191;
+    border: 1px solid #0F9191;
+}
+
+::placeholder{
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Seccion Responsiva */
+@media screen and (max-width: 1024px) {
+    .seccion_login main form{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .seccion_login main form{
+        width: 90%;
+    }
+}

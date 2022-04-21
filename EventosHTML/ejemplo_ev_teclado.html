@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Eventos Teclado</title>
+    <style>
+        p { padding: 0.3em 1em; font-family: arial; }
+        #caja2 { width: 250px;float: left; border: 1px solid black; margin:20px; }
+    </style>
+</head>
+<body>
+    <h1>Información del teclado</h1>
+    <p>Pulsa una tecla y te daré la información sobre la misma.</p>
+    <div id="caja"><div>
+    <script type="text/javascript">
+        window.addEventListener('load', function(){
+            document.addEventListener('keyup', info);
+            document.addEventListener('keypress', info);
+            document.addEventListener('keydown', info);
+        })
+
+        function info(elEvento) {
+            let texto = document.getElementById("caja") //acceso al sitio de escritura
+            let evento = elEvento || window.event // Definir objeto event
+            if (evento.type ==  "keydown" ) {
+                console.log(evento);
+                //borrar texto anterior
+                texto.innerHTML = ""
+            } 
+            // charCode: Obtiene el valor Unicode de la tecla presionada
+            // keyCode también pero ya ess deprecated
+            tipo = "<div id='caja2'><p>Tipo de evento: " + evento.type + "</p>" // Define tipo de evento
+            propkeyCode = "<p>Propiedad keyCode " + evento.keyCode +  "</p>"  // info propiedad keyCode
+            propcharCode = "<p>Propiedad charCode " + evento.charCode + "</p>" //info propiedad charCode
+            if (evento.type ==  "keypress" ) { 
+                console.log(evento);
+                // El número de caracter sólo está en el evento keypress
+                caracter = "<p>Caracter pulsado<br/> Int. Explorer: " + String.fromCharCode(evento.keyCode) + "</p>";
+                caracter2 = "<p>Caracter pulsado<br/> Resto naveg.: " + String.fromCharCode(evento.charCode) + "</p>";
+            } else {
+                caracter = ""
+                caracter2 = ""
+            }
+            // Escribir el texto del evento, al haber tres eventos el texto se escribirá tres veces.
+            texto.innerHTML += tipo + propkeyCode + propcharCode + caracter + caracter2 + "<br/></div>"
+        } 
+
+    </script>
+</body>
+</html>
